@@ -1,0 +1,9 @@
+server {
+    listen 80;
+    server_name 87.106.169.62 78767b7.online-server.cloud;
+
+    location / {
+        include uwsgi_params;
+        uwsgi_pass unix:/tmp/myapp.sock;
+    }
+}

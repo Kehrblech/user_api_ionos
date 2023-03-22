@@ -1,0 +1,13 @@
+[Unit]
+Description=uWSGI instance to serve myapp
+After=network.target
+
+[Service]
+User=apigenie
+Group=www-data
+WorkingDirectory=/var/www/api_genie
+Environment="PATH=/var/www/api_genie/venv/bin"
+ExecStart=/var/www/api_genie/venv/bin/uwsgi --ini /var/www/api_genie/myapp.ini
+
+[Install]
+WantedBy=multi-user.target
