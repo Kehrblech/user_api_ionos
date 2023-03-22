@@ -7,7 +7,7 @@ How to run a python flask api, on a IONOS VPS, with uWSGI and route it to your i
   * [Git](#git)
   * [File setup](#file-setup)
   * [Server setup](#server-setup)
-  * [Server strukture](#server-strukure)
+  * [Server strukture](#server-strukture)
   * [Setup VENV](#setup-venv)
   * [Checking service state](#Checking-service-state)
 - [API Reference](#api-reference)
