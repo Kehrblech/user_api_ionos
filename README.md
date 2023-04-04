@@ -221,7 +221,7 @@ Following command could help you to identify the Problem:
 ```bash
     sudo journalctl -u myapp
 ```
-###SSL
+### SSL
 1. Select domain on ionos and do the wildcard ssl cert.
 
 2. Download ssl.cert and privat.key from ionos and upload to VPS
@@ -229,32 +229,32 @@ Following command could help you to identify the Problem:
 3. Folder for ssl.cert is -> /etc/ssl/cert and folder for privat.key -> /etc/ssl/priv
 
 3. Go to the site available folder and change script there
-´´´bash
+```bash
 server {
-listen 443 ssl;
-server_name 87.106.169.62 78767b7.online-server.cloud api-genie.stoecklin.io;
+   listen 443 ssl;
+   server_name 87.106.169.62 78767b7.online-server.cloud api-genie.stoecklin.io;
 
-ssl_certificate /etc/ssl/certs/stoecklin.io_ssl_certificate.cer;
-ssl_certificate_key /etc/ssl/private/_.stoecklin.io_private_key.key;
+   ssl_certificate /etc/ssl/certs/stoecklin.io_ssl_certificate.cer;
+   ssl_certificate_key /etc/ssl/private/_.stoecklin.io_private_key.key;
 
-location / {
-include uwsgi_params;
-uwsgi_pass unix:/tmp/myapp.sock;
+   location / {
+      include uwsgi_params;
+      uwsgi_pass unix:/tmp/myapp.sock;
+   }
 }
-}
-´´´
+```
 4. check syntax
-´´´bash
+```bash
 sudo nginx -t
-´´´
+```
 5. restart nginx
-´´´bash
+```bash
 sudo systemctl restart nginx
-´´´
+```
 6. Dont forget your Firewall
-´´´bash
+```bash
 sudo ufw allow 443/TCP
-´´´
+```
 ## 🚀 stoecklin.io
 
 
